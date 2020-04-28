@@ -1,0 +1,51 @@
+.card{
+    margin: 50px;
+    width: 500px;
+    height: 100%;
+    margin-left: 355px;
+    background-color: lightgrey;
+    border-radius: 10px;
+}
+
+.card .titulo h3{
+    text-align: center;
+    margin: 10px;
+    text-transform: capitalize;
+    text-decoration: solid;
+    font-size: x-large;
+    font-weight: 600;
+    
+    
+}
+.card p{
+    margin: 20px;
+    text-decoration: none;
+    text-transform: capitalize;
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+.card small{
+    margin: 20px;
+}
+
+.card button{
+    width: 100px;
+    height: 30px;
+    margin: 10px;
+    border-radius: 5px;
+    margin-left: 90px;
+    
+    
+   
+}
+.success button{
+    background-color: darkcyan;
+    color: aliceblue;
+    
+}
+.success button:hover{
+    background-color: rgb(100, 162, 170);
+    cursor: pointer;
+    
+}
+
