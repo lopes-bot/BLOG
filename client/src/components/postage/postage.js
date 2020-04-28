@@ -1,35 +1,49 @@
 import React, { Component } from 'react';
 import './postage.css';
+import axios from 'axios';
+
+
 
 export default class postage extends Component {
+
+    state ={
+        postage:[]
+    }
+   
+    constructor(props){
+        super(props)
+
+        axios.get('/postage/list').then(res=>{
+            const postage = res.data
+            this.setState({
+                postage
+            })
+           
+           
+        })
+    }
+   
     render() {
+       
         return (
-            <div className="card">
-                <div>
-                    <div className="titulo">
-                       <h3>Titulo</h3>
+            <div>
+                {this.state.postage.map(post =>(
+                    <div className="card">
+                          <h3>Titulo: {post.title}</h3>
+                          <hr></hr>
+                          <p>Descrição{post.description}</p>
+                          <small>Autor:{post.author}</small>
+                          <small>Data:{post.date}</small>
+                          <hr></hr>
+                          <div className="success"> 
+                          <button >Editar</button>
+                          <button >Deletar</button>
+                          </div>
+                          
                     </div>
-                    <hr></hr>
-                    <p>Lorem Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de 
-                    impressos, e vem sendo utilizado desde o século XVI, quando um impressor desconhecido pegou
-                     uma bandeja de tipos e os embaralhou para fazer um livro de modelos de tipos. Lorem Ipsum
-                      sobreviveu não só a cinco séculos, como também ao salto para a editoração eletrônica, permanecendo 
-                      essencialmente inalterado. Se popularizou na década de 60, quando a Letraset lançou decalques 
-                      contendo passagens de Lorem Ipsum, e mais recentemente quando 
-                    passou a ser integrado a softwares de editoração eletrônica como Aldus PageMaker.</p>
-                    <small>Autor</small>
-                    <small>Data</small><hr></hr>
-                    
-                        <div className="success">
-                            <button>Editar</button>
-                            <button>Deletar</button>
-                        </div>
-                        
-                   
-                    
-                    
-                </div>
-                
+                          
+                          
+                 ))}
             </div>
         )
     }

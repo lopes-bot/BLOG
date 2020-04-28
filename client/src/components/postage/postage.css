@@ -7,7 +7,7 @@
     border-radius: 10px;
 }
 
-.card .titulo h3{
+.card h3{
     text-align: center;
     margin: 10px;
     text-transform: capitalize;
